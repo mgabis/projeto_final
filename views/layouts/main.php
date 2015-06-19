@@ -36,13 +36,13 @@ AppAsset::register($this);
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#/site/index">inicio</a>
+                        <a class="navbar-brand" href="<?= Url::to(['site/index']);?>">inicio</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="<?= Url::to(['site/index']);?>">Shows<span class="sr-only">(current)</span></a></li>
+                            <li class="active"><a href="<?= Url::to(['site/show']);?>">Shows<span class="sr-only">(current)</span></a></li>
                             <li><a href="<?= Url::to(['site/cinema']);?>">Cinema</a></li>
                          <li><a href="<?= Url::to(['site/teatro']);?>">Teatro</a></li>
                             <li><a href="<?= Url::to(['site/balada']);?>">Balada</a></li>
