@@ -1,22 +1,24 @@
 <?php
+use yii\helpers\BaseUrl as Url; 
 /* @var $this yii\web\View */
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Parabéns!!</h1>
+       
+        <img src="<?= Url::to(['img/logo.png']);?>" alt="..." class="img-rounded">
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+       
     </div>
 
     <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2><img src="<?= Url::to(['img/sonata_arctica.jpg']);?>" alt="..." class="img-rounded"></h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
