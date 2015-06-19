@@ -87,10 +87,16 @@ class SiteController extends Controller {
         return $this->render('about');
     }
 
-    // ...código existente...
+    public function actionCinema() {
+        return $this->render('Cinema');
+    }
 
-    public function actionSay($message = 'Hello') {
-        return $this->render('say', ['message' => $message]);
+    public function actionBalada() {
+        return $this->render('Balada');
+    }
+
+    public function actionTeatro() {
+        return $this->render('Teatro');
     }
 
 }

@@ -7,6 +7,7 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'aokaokaokaoa3121242',
@@ -38,6 +39,17 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+//        'urlManager' => array(
+//            'enablePrettyUrl' => true,
+//            'urlFormat' => 'path',
+//            'showScriptName' => false,
+//            'rules' => array(
+//                '<controller:\w+>' => '<controller>/list',
+//                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+//                '<controller:\w+>/<id:\d+>/<title>' => '<controller>/view',
+//                '<controller://\w+>/<id:\d+>' => '<controller>/view',
+//            ),
+//        ),
     ],
     'params' => $params,
 ];
