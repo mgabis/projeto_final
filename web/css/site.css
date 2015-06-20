@@ -89,3 +89,25 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+.tam-lg {
+    max-width: 100%;
+    padding-left: 40px;
+}
+
+.local-barra {
+    margin-top: 50px;
+    margin-left: 130PX;
+}
+
+.local-boton {
+    margin-top: 50px;
+    
+}
+
+.pos-ola {
+    margin-top: 20px;
+    color: #0000ff;
+    font-family: 'sans-serif';
+    
+}
