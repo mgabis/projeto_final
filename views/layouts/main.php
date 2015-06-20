@@ -43,7 +43,7 @@ AppAsset::register($this);
             </div>
             <div class="col-md-3">
                 <p class="pos-ola">Olá, Visitante</p>
-                <a href="<?= Url::to(['site/contact']); ?>">Entre</a>
+                <a href="<?= Url::to(['site/login']); ?>">Entre</a>
                 <a>Cadastre-se</a>
                 <a>Carrinho</a><br>
             </div>
@@ -72,12 +72,6 @@ AppAsset::register($this);
                             <li><a href="<?= Url::to(['site/balada']); ?>">Balada</a></li>
                             <li><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
                         </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
                         <ul class="nav navbar-nav navbar-right">
                         </ul>
                     </div><!-- /.navbar-collapse -->
