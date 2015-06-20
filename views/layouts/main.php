@@ -42,10 +42,10 @@ AppAsset::register($this);
 
             </div>
             <div class="col-md-3">
-                <p class="pos-ola">Ola Visitante</p>
-                <p>Entre</p>
-                <p>Cadastre-se</p>
-                <p>Carrinho</p>
+                <p class="pos-ola">Olá, Visitante</p>
+                <a href="<?= Url::to(['site/contact']); ?>">Entre</a>
+                <a>Cadastre-se</a>
+                <a>Carrinho</a><br>
             </div>
         </div>
         <?php $this->beginBody() ?>
