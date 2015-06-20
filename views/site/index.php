@@ -11,14 +11,16 @@ $this->title = 'My Yii Application';
     <div class="jumbotron">
 
         <div class="row">
-
+            
+            <img class="home" src="<?= Url::to(['img/logo1.png']); ?>">
+            
             <?php
             echo Carousel::widget([
                 'items' => [
                     // the item contains only the image
-                    '<img style="margin-left:auto; margin-right:auto" src="' . Url::to(['img/sonata_arctica.jpg']) . '"/>',
-                    '<img style="margin-left:auto; margin-right:auto" src="' . Url::to(['img/reacap.jpg']) . '"/>',
-                    '<img style="margin-left:auto; margin-right:auto" src="' . Url::to(['img/Sonata.png']) . '"/>',
+                    '<img class="img" src="' . Url::to(['img/sonata_arctica.jpg']) . '"/>',
+                    '<img class="img" src="' . Url::to(['img/reacap.jpg']) . '"/>',
+                    '<img class="img" src="' . Url::to(['img/neon1.jpg']) . '"/>',
                 ]
             ]);
             ?>
