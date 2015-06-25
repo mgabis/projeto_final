@@ -98,5 +98,13 @@ class SiteController extends Controller {
     public function actionTeatro() {
         return $this->render('Teatro');
     }
+    
+     public function actionShow() {
+        return $this->render('Show');
+    }
+
+      public function actionSonata() {
+        return $this->render('Sonata');
+    }
 
 }
