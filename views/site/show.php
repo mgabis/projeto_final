@@ -12,9 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-lg-4">
-            <a href="site/sonata"><img src="<?= Url::to(['img/images.jpg']); ?>" alt="..." class="img-rounded"></a>
+            <a href="<?= Url::to(['site/sonata']); ?>"><img src="<?= Url::to(['img/images.jpg']); ?>" alt="..." class="img-rounded"></a>
 
-            <a href="site/sonata"><h2>Sonata Arctica</h2></a>
+            <a href="<?= Url::to(['site/sonata']); ?>"><h2>Sonata Arctica</h2></a>
             <p>Ainda que originária da gélida Finlândia, a banda Sonata Arctica desembarcará em Porto Alegre
                 para aquecer ainda mais os corações metálicos da gauchada. Trabalhando na divulgação
                 de seu mais recente disco, Pariah’s Child – sem deixar de fora do repertório belas composições
