@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Contact;
 
 class SiteController extends Controller {
 
@@ -71,6 +72,9 @@ class SiteController extends Controller {
     }
 
     public function actionContact() {
+
+
+
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -98,13 +102,29 @@ class SiteController extends Controller {
     public function actionTeatro() {
         return $this->render('Teatro');
     }
-    
-     public function actionShow() {
+
+    public function actionShow() {
         return $this->render('Show');
     }
 
-      public function actionSonata() {
+    public function actionSonata() {
         return $this->render('Sonata');
+    }
+
+    public function actionCadastro() {
+
+
+
+        $model = new Cadastro();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        } else {
+            return $this->render('Cadastro', [
+                        'model' => $model,
+            ]);
+        }
     }
 
 }

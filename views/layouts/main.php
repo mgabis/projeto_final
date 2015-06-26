@@ -42,9 +42,9 @@ AppAsset::register($this);
 
             </div>
             <div class="col-md-3">
-                <p class="pos-ola">Olá, Visitante</p>
+                <p class="pos-ola">OlÃ¡, Visitante</p>
                 <a href="<?= Url::to(['site/login']); ?>">Entre</a>
-                <a>Cadastre-se</a>
+                <a href="<?= Url::to(['site/cadastro']); ?>">Cadastre-se</a>
                 <a>Carrinho</a><br>
             </div>
         </div>
@@ -88,7 +88,7 @@ AppAsset::register($this);
               echo Nav::widget([
               'options' => ['class' => 'navbar-nav navbar-right'],
               'items' => [
-              ['label' => 'Início', 'url' => ['/site/index']],
+              ['label' => 'InÃ­cio', 'url' => ['/site/index']],
               ['label' => 'Sobre', 'url' => ['/site/about']],
               ['label' => 'Contato', 'url' => ['/site/contact']],
               ['label' => 'Pessoas', 'url' => ['/site/todas']],
