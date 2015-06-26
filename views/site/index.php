@@ -11,9 +11,9 @@ $this->title = 'My Yii Application';
     <div class="jumbotron">
 
         <div class="row">
-            
+
             <img class="home" src="<?= Url::to(['img/logo1.png']); ?>">
-            
+
             <?php
             echo Carousel::widget([
                 'items' => [
@@ -33,14 +33,10 @@ $this->title = 'My Yii Application';
 
         <div class="row">
             <div class="col-lg-4">
-                <a href="site/sonata"><img src="<?= Url::to(['img/images.jpg']); ?>" alt="..." class="img-rounded"></a>
+                <a href="<?= Url::to(['site/sonata']); ?>"><img src="<?= Url::to(['img/images.jpg']); ?>" alt="..." class="img-rounded"></a>
 
-                <a href="site/sonata" style="color: #000000"><h2>Sonata Arctica</h2></a>
-                <p>Ainda que originária da gélida Finlândia, a banda Sonata Arctica desembarcará em Porto Alegre
-                    para aquecer ainda mais os corações metálicos da gauchada. Trabalhando na divulgação
-                    de seu mais recente disco, Pariah’s Child – sem deixar de fora do repertório belas composições
-                    dos álbuns anteriores –, o quinteto de power metal europeu se apresentará dia 27 de julho de 2015,
-                    às 20h, no Opinião (Rua José do Patrocínio, 834).</p>
+                <a href="<?= Url::to(['site/sonata']); ?>" style="color: #000000"><h2>Sonata Arctica</h2></a>
+
 
 
             </div>
