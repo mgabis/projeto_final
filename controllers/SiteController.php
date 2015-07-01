@@ -111,20 +111,4 @@ class SiteController extends Controller {
         return $this->render('Sonata');
     }
 
-    public function actionCadastro() {
-
-
-
-        $model = new Cadastro();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        } else {
-            return $this->render('Cadastro', [
-                        'model' => $model,
-            ]);
-        }
-    }
-
 }
