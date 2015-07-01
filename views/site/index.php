@@ -4,7 +4,7 @@ use yii\helpers\BaseUrl as Url;
 use yii\bootstrap\Carousel;
 
 /* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+$this->title = 'My Ticket';
 ?>
 <div class="site-index">
 
@@ -43,10 +43,10 @@ $this->title = 'My Yii Application';
             <div class="col-lg-4">
                 <img src="<?= Url::to(['img/reacao_cadeia.jpg']); ?>" alt="..." class="img-rounded">
 
-                <h2>Reação em cadeia</h2>
-                <p>A Reação em Cadeia está completando 15 anos em 2015! Para comemorar, a banda realizará nos dias 29 e 30 de julho
-                    um show acústico com os seus maiores sucessos para aquuecer os fãs neste inverno. O show será no Teatro CIEE
-                    às 21 horas, R. Dom Pedro II, 861 - Higienópolis, Porto Alegre - RS.</p>
+                <h2>Reaï¿½ï¿½o em cadeia</h2>
+                <p>A Reaï¿½ï¿½o em Cadeia estï¿½ completando 15 anos em 2015! Para comemorar, a banda realizarï¿½ nos dias 29 e 30 de julho
+                    um show acï¿½stico com os seus maiores sucessos para aquuecer os fï¿½s neste inverno. O show serï¿½ no Teatro CIEE
+                    ï¿½s 21 horas, R. Dom Pedro II, 861 - Higienï¿½polis, Porto Alegre - RS.</p>
 
 
             </div>
@@ -54,9 +54,9 @@ $this->title = 'My Yii Application';
                 <img src="<?= Url::to(['img/neon.jpg']); ?>" alt="..." class="img-rounded">
                 <h2>Neon</h2>
                 <p>Os DJs residentes Cevallos e Kahara apresentam mais uma NEON com o foco nos talentos locais!
-                    O convidado da vez é um dos residentes da festa Wax, Henrique Casanova aka Apoena. Apoena é DJ/produtor gaúcho
-                    com reconhecimento internacional, um dos poucos no país inserido na indústria internacional do vinil, com discos
-                    de Techno e Deep House lançados por diversos selo pelo mundo, inclusive o seu próprio Allnite Music.</p>
+                    O convidado da vez ï¿½ um dos residentes da festa Wax, Henrique Casanova aka Apoena. Apoena ï¿½ DJ/produtor gaï¿½cho
+                    com reconhecimento internacional, um dos poucos no paï¿½s inserido na indï¿½stria internacional do vinil, com discos
+                    de Techno e Deep House lanï¿½ados por diversos selo pelo mundo, inclusive o seu prï¿½prio Allnite Music.</p>
 
 
             </div>

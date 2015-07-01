@@ -44,7 +44,7 @@ AppAsset::register($this);
             <div class="col-md-3">
                 <p class="pos-ola">Olá, Visitante</p>
                 <a href="<?= Url::to(['site/login']); ?>">Entre</a>
-                <a href="<?= Url::to(['site/cadastro']); ?>">Cadastre-se</a>
+                <a href="<?= Url::to(['person/create']); ?>">Cadastre-se</a>
                 <a>Carrinho</a><br>
             </div>
         </div>
@@ -69,7 +69,7 @@ AppAsset::register($this);
                             <li class="active"><a href="<?= Url::to(['site/show']); ?>">Shows<span class="sr-only">(current)</span></a></li>
                             <li><a href="<?= Url::to(['site/cinema']); ?>">Cinema</a></li>
                             <li><a href="<?= Url::to(['site/teatro']); ?>">Teatro</a></li>
-                            <li><a href="<?= Url::to(['site/balada']); ?>">Balada</a></li>
+                            <li><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
                             <li><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">

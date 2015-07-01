@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\PersonSearch */
+/* @var $searchModel app\models\EventBalladSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cadastre-se';
+$this->title = 'Event Ballads';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="person-index">
+<div class="event-ballad-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Person', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Event Ballad', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,19 +25,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'name',
-            'cpf',
-            'rg',
-            'email:email',
-            // 'phone_1',
-            // 'phone_2',
-            // 'address',
+            'local',
+            'date',
+            //'address',
             // 'number',
             // 'neighborhood',
             // 'city',
             // 'state',
-            // 'password',
+            // 'start_time:datetime',
+            // 'final_hour',
+            // 'number_of_tickets',
+            // 'valor',
+            // 'type_of_tickets',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
