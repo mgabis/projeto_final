@@ -6,7 +6,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\helpers\BaseUrl as Url;
-
+ use yii\web\View;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -20,13 +20,15 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <?php $this->head() ?>
+        <?php $this->head() ;
+              view::registerJsFile( '', '', '' );
+                ?>
     </head>
     <body>
         <div>
             <div class="row">
                 <div class="col-md-3">
-                    <img class="tam-lg" src="<?= Url::to(['img/logo1.png']); ?>">
+                    <a href="<?= Url::to(['site/index']); ?>" ><img class="tam-lg" src="<?= Url::to(['img/logo1.png']); ?>"></a>
                 </div>
                 <div class="col-md-6">
                     <form class="form-inline">
@@ -60,48 +62,20 @@ AppAsset::register($this);
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="<?= Url::to(['site/index']); ?>">inicio</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="<?= Url::to(['site/show']); ?>">Shows<span class="sr-only">(current)</span></a></li>
-                            <li><a href="<?= Url::to(['site/cinema']); ?>">Cinema</a></li>
-                            <li><a href="<?= Url::to(['site/teatro']); ?>">Teatro</a></li>
-                            <li><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
-                            <li><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
+                            <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
+                            <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-            <?php
-            /* NavBar::begin([
-              'brandLabel' => 'My Ticket.com',
-              'brandUrl' => Yii::$app->homeUrl,
-              'options' => [
-              'class' => 'navbar-inverse navbar-fixed-top',
-              ],
-              ]);
-              echo Nav::widget([
-              'options' => ['class' => 'navbar-nav navbar-right'],
-              'items' => [
-              ['label' => 'Início', 'url' => ['/site/index']],
-              ['label' => 'Sobre', 'url' => ['/site/about']],
-              ['label' => 'Contato', 'url' => ['/site/contact']],
-              ['label' => 'Pessoas', 'url' => ['/site/todas']],
-              Yii::$app->user->isGuest ?
-              ['label' => 'Login', 'url' => ['/site/login']] :
-              ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-              'url' => ['/site/logout'],
-              'linkOptions' => ['data-method' => 'post']],
-              ],
-              ]);
-              NavBar::end(); */
-            ?>
-
             <div class="container">
                 <?=
                 Breadcrumbs::widget([
