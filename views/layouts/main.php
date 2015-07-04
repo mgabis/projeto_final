@@ -6,7 +6,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\helpers\BaseUrl as Url;
- use yii\web\View;
+use yii\web\View;
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -20,9 +21,10 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
-        <?php $this->head() ;
-              view::registerJsFile( '', '', '' );
-                ?>
+        <?php
+        $this->head();
+        view::registerJsFile('', '', '');
+        ?>
     </head>
     <body>
         <div>
@@ -70,8 +72,11 @@ AppAsset::register($this);
                             <li class="active"><a href="<?= Url::to(['site/show']); ?>">Shows<span class="sr-only">(current)</span></a></li>
                             <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
                             <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
+
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <div class="insta">
+                            </div>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
@@ -94,6 +99,8 @@ AppAsset::register($this);
         </footer>
 
         <?php $this->endBody() ?>
+
     </body>
+
 </html>
 <?php $this->endPage() ?>

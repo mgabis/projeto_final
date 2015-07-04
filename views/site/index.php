@@ -1,8 +1,7 @@
 <?php
+
 use yii\helpers\BaseUrl as Url;
 use yii\bootstrap\Carousel;
-
-
 
 /* @var $this yii\web\View */
 $this->title = 'My Ticket';
@@ -45,12 +44,12 @@ $this->title = 'My Ticket';
             <div class="col-lg-4">
                 <img src="<?= Url::to(['img/reacao_cadeia.jpg']); ?>" alt="..." class="img-rounded">
 
-                <h2>Rea��o em cadeia</h2>
+                <a href="<?= Url::to(['']); ?>" style="color: #000000"><h2>Reação em cadeia</h2></a>
 
             </div>
             <div class="col-lg-4">
-                <img src="<?= Url::to(['img/neon.jpg']); ?>" alt="..." class="img-rounded">
-                <h2>Neon</h2>
+                <a href="<?= Url::to(['']); ?>" style="color: #000000"><img src="<?= Url::to(['img/neon.jpg']); ?>" alt="..." class="img-rounded"></a>
+                <a href="<?= Url::to(['']); ?>" style="color: #000000"><h2>Neon</h2></a>
 
 
 
@@ -58,4 +57,5 @@ $this->title = 'My Ticket';
         </div>
 
     </div>
+
 </div>

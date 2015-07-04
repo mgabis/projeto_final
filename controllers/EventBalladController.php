@@ -40,7 +40,7 @@ class EventBalladController extends Controller {
     }
 
     public function actionListar() {
-        $baladas = EventBallad::find();
+        $baladas = EventBallad::find()->all();
         return $this->render('listar',[
             'baladas'=>$baladas
         ]);
