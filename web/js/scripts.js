@@ -1,7 +1,8 @@
 $('.insta').socialstream({
     socialnetwork: 'instagram',
     limit: 6,
-    username: 'gameofthrones',
+    username: 'zacharylevi', 
+    id: '#show',
     overlay: true,
     apikey: false
 });

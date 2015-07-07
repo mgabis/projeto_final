@@ -113,8 +113,6 @@ a.desc:after {
 }
 
 .img {
-    width: 1000px;
-    height: 566px;
     margin: auto;
 
 }
@@ -127,3 +125,43 @@ a.desc:after {
     margin-top: 200px;
     margin: auto auto;
 }
+
+.social-feed{
+    /*width: 500px;*/
+    margin: 0 auto;
+    display: block;
+    display: table;
+    width: 100%
+}
+
+
+.social-feed li{
+    width: 50px;
+    height: 50px;
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.social-feed li img{
+    width: 50px;
+    height: 50px;
+}
+
+.section-title{
+    font-size: 22px;
+    margin: 30px auto 0;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    font-family: Arial;
+    color: #fff;
+    float: left;
+}
+
+li.insta{
+    size: 15px
+}
+

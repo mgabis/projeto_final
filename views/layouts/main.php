@@ -55,52 +55,43 @@ AppAsset::register($this);
         <?php $this->beginBody() ?>
         <div class="wrap">
             <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="<?= Url::to(['site/show']); ?>">Shows<span class="sr-only">(current)</span></a></li>
-                            <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
-                            <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="<?= Url::to(['site/show']); ?>">Shows<span class="sr-only">(current)</span></a></li>
+                        <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
+                        <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
 
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <div class="insta">
-                            </div>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-            <div class="container">
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ])
-                ?>
-                <?= $content ?>
-            </div>
-        </div>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
 
-        <footer class="footer">
-            <div class="container">
-                <p class="pull-left">&copy; My Ticket <?= date('Y') ?></p>
-                <p class="pull-right"><?= Yii::powered() ?></p>
-            </div>
-        </footer>
+        <div class="insta"></div>
 
-        <?php $this->endBody() ?>
+        <?=
+        Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ])
+        ?>
+        <?= $content ?>
+    </div>
+</div>
 
-    </body>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; My Ticket <?= date('Y') ?></p>
+        <p class="pull-right"><?= Yii::powered() ?></p>
+    </div>
+</footer>
+
+<?php $this->endBody() ?>
+
+</body>
 
 </html>
 <?php $this->endPage() ?>

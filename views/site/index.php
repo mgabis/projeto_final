@@ -19,7 +19,7 @@ $this->title = 'My Ticket';
             echo Carousel::widget([
                 'items' => [
                     // the item contains only the image
-                    '<img class="img" src="' . Url::to(['img/thiaguinho.jpg']) . '"/>',
+                    '<img class="img"  src="' . Url::to(['img/thiaguinho.jpg']) . '"/>',
                     '<img class="img" src="' . Url::to(['img/rave.png']) . '"/>',
                     '<img class="img" src="' . Url::to(['img/vitor e leo.jpg']) . '"/>',
                 ]
