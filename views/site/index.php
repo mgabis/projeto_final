@@ -32,29 +32,29 @@ $this->title = 'My Ticket';
 
     <div class="body-content">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="<?= Url::to(['site/sonata']); ?>"><img src="<?= Url::to(['img/images.jpg']); ?>" alt="..." class="img-rounded"></a>
-
-                <a href="<?= Url::to(['site/sonata']); ?>" style="color: #000000"><h2>Sonata Arctica</h2></a>
-
-
-
-            </div>
-            <div class="col-lg-4">
-                <img src="<?= Url::to(['img/reacao_cadeia.jpg']); ?>" alt="..." class="img-rounded">
-
-                <a href="<?= Url::to(['']); ?>" style="color: #000000"><h2>Reação em cadeia</h2></a>
-
-            </div>
-            <div class="col-lg-4">
-                <a href="<?= Url::to(['']); ?>" style="color: #000000"><img src="<?= Url::to(['img/neon.jpg']); ?>" alt="..." class="img-rounded"></a>
-                <a href="<?= Url::to(['']); ?>" style="color: #000000"><h2>Neon</h2></a>
-
-
-
-            </div>
+        <?php foreach($baladas as $balada){ ?>
+        
+        <div class="col-md-4">
+            <img src="" class="img-rounded">
+            <a href="" >Site oficial</a>
+            <h2><?php echo $balada->name; ?></h2>
+            <h2><?php echo $balada->neighborhood; ?></h2>
+            <p><?php echo $balada->local; ?></p>
         </div>
+        
+        <?php } ?>
+            
+            <?php foreach($show as $shows){ ?>
+        
+        <div class="col-md-4">
+            <img src="" class="img-rounded">
+            <a href="" >Site oficial</a>
+            <h2><?php echo $shows->name; ?></h2>
+            <h2><?php echo $shows->neighborhood; ?></h2>
+            <p><?php echo $shows->local; ?></p>
+        </div>
+        
+        <?php } ?>
 
     </div>
 

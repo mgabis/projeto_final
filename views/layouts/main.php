@@ -65,18 +65,19 @@ AppAsset::register($this);
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <div class="insta"></div>
                     </ul>
                 </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container">
 
-        <div class="insta"></div>
+        
 
-        <?=
-        Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ])
+        <?php
+//        Breadcrumbs::widget([
+//            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+//        ])
         ?>
         <?= $content ?>
     </div>

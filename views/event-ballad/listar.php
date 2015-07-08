@@ -29,6 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         
         <?php } ?>
+        
+     
     </div>
 
 </div>

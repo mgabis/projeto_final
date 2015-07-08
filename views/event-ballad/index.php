@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EventBalladSearch */
@@ -11,7 +12,9 @@ $this->title = 'Event Ballads';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="event-ballad-index">
-
+<?php echo $form->field($model, 'avatar')->widget(FileInput::classname(), [
+    'options' => ['accept' => 'image/*'],
+]);?>
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 

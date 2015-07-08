@@ -161,7 +161,14 @@ a.desc:after {
     float: left;
 }
 
-li.insta{
-    size: 15px
+.insta ul {
+    list-style: none;
+}
+.insta ul li {
+    display:inline-block;
+}
+
+.insta li img{
+    width: 50px
 }
 
