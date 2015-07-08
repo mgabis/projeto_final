@@ -1,0 +1,24 @@
+      $upload=new Upload($_FILES["image".$i]);
+                    $path=Yii::app()->request->baseUrl."/protected/images/" ;
+                    try{
+                        if($upload->uploaded)
+                        {
+                            $upload->process($path);
+                        }
+                        else
+                        {
+                            echo(" file not uploaded ");
+                        }
+                        if($upload->processed) {
+                            $destName[$i] = $upload->file_dst_name;
+                        }
+                        else
+                        {
+                            echo("upload not processed");
+                            die;
+                        }
+                    }
+                    catch (Exception $excp)
+                    {
+                        echo($excp);
+                    }
