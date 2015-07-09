@@ -33,64 +33,65 @@ AppAsset::register($this);
                     <a href="<?= Url::to(['site/index']); ?>" ><img class="tam-lg" src="<?= Url::to(['img/logo1.png']); ?>"></a>
                 </div>
                 <div class="col-md-6">
-                    <form class="form-inline">
+                    <form class="form-inline" action="<?= Url::to(['site/buscar']); ?>" method="GET">
                         <div class="form-group">
                             <div class="form-group">
 
-                                <input class="local-barra form-control" type="pesquisa" id="exampleInputEmail2" placeholder="Pesquisar Shows, Baladas, Teatro..." style="width: 550px">
+                                <input class="local-barra form-control" type="text" id="exampleInputEmail2" name="termo" placeholder="Pesquisar Shows, Baladas, Teatro..." style="width: 550px">
                             </div>
 
                             <button class="local-boton btn btn-success" type="submit"  ><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
                     </form>
+
+
                 </div>
-
+                <div class="col-md-3">
+                    <p class="pos-ola">Olá, Visitante</p>
+                    <a href="<?= Url::to(['site/login']); ?>">Entre</a>
+                    <a href="<?= Url::to(['person/create']); ?>">Cadastre-se</a>
+                    <a>Carrinho</a><br>
+                </div>
             </div>
-            <div class="col-md-3">
-                <p class="pos-ola">Olá, Visitante</p>
-                <a href="<?= Url::to(['site/login']); ?>">Entre</a>
-                <a href="<?= Url::to(['person/create']); ?>">Cadastre-se</a>
-                <a>Carrinho</a><br>
-            </div>
-        </div>
-        <?php $this->beginBody() ?>
-        <div class="wrap">
-            <nav class="navbar navbar-default">
+            <?php $this->beginBody() ?>
+            <div class="wrap">
+                <nav class="navbar navbar-default">
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?= Url::to(['site/show']); ?>">Shows<span class="sr-only">(current)</span></a></li>
-                        <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
-                        <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="<?= Url::to(['site/show']); ?>">Shows<span class="sr-only">(current)</span></a></li>
+                            <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
+                            <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
 
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <div class="insta"></div>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-    <div class="container">
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <div class="insta"></div>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container">
 
-        
 
-        <?php
+
+            <?php
 //        Breadcrumbs::widget([
 //            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 //        ])
-        ?>
-        <?= $content ?>
+            ?>
+            <?= $content ?>
+        </div>
     </div>
-</div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Ticket <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-left">&copy; My Ticket <?= date('Y') ?></p>
+            <p class="pull-right"><?= Yii::powered() ?></p>
+        </div>
+    </footer>
 
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
 
 </body>
 

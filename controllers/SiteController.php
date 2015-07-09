@@ -9,6 +9,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Contact;
+use app\models\EventBallad;
+use app\models\Shows;
 
 class SiteController extends Controller {
 
@@ -73,8 +75,6 @@ class SiteController extends Controller {
 
     public function actionContact() {
 
-
-
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -85,6 +85,20 @@ class SiteController extends Controller {
                         'model' => $model,
             ]);
         }
+    }
+
+    public function actionBuscar($termo = null) {
+        if ($termo) {            
+            $baladas = EventBallad::find()->andFilterWhere(['like', 'name', $termo])->all();
+            $shows = Shows::find()->andFilterWhere(['like', 'name', $termo])->all();            
+        } else {
+            $baladas = EventBallad::find()->all();
+            $shows = Shows::find()->all();
+        }
+        $eventos = array_merge($baladas, $shows);
+        return $this->render('buscar', [
+            'eventos' => $eventos
+        ]);
     }
 
     public function actionAbout() {

@@ -41,8 +41,8 @@ class EventBalladController extends Controller {
 
     public function actionListar() {
         $baladas = EventBallad::find()->all();
-        return $this->render('listar',[
-            'baladas'=>$baladas
+        return $this->render('listar', [
+                    'baladas' => $baladas
         ]);
     }
 
@@ -66,6 +66,28 @@ class EventBalladController extends Controller {
         $model = new EventBallad();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            echo '<pre>';
+var_dump($_FILES);
+exit;
+            $upload = new Upload($_FILES["image" . $i]);
+            $path = Yii::app()->request->baseUrl . "/protected/images/";
+            try {
+                if ($upload->uploaded) {
+                    $upload->process($path);
+                } else {
+                    echo(" file not uploaded ");
+                }
+                if ($upload->processed) {
+                    $destName[$i] = $upload->file_dst_name;
+                } else {
+                    echo("upload not processed");
+                    die;
+                }
+            } catch (Exception $excp) {
+                echo($excp);
+            }
+
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -84,6 +106,23 @@ class EventBalladController extends Controller {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $upload = new Upload($_FILES["image" . $i]);
+            $path = Yii::app()->request->baseUrl . "/protected/images/";
+            try {
+                if ($upload->uploaded) {
+                    $upload->process($path);
+                } else {
+                    echo(" file not uploaded ");
+                }
+                if ($upload->processed) {
+                    $destName[$i] = $upload->file_dst_name;
+                } else {
+                    echo("upload not processed");
+                    die;
+                }
+            } catch (Exception $excp) {
+                echo($excp);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

@@ -32,7 +32,7 @@ $this->title = 'My Ticket';
 
     <div class="body-content">
 
-        <?php foreach($baladas as $balada){ ?>
+        <?php /*foreach($baladas as $balada){ ?>
         
         <div class="col-md-4">
             <img src="" class="img-rounded">
@@ -54,7 +54,7 @@ $this->title = 'My Ticket';
             <p><?php echo $shows->local; ?></p>
         </div>
         
-        <?php } ?>
+        <?php } */?>
 
     </div>
 

@@ -2,14 +2,13 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\EventBallad */
+/* @var $model app\models\shows */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="event-ballad-form">
+<div class="shows-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -38,21 +37,11 @@ use kartik\widgets\FileInput;
     <?= $form->field($model, 'valor')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'type_of_tickets')->textInput(['maxlength' => true]) ?>
-    
-    <?= $form->field($model, 'avatar')->fileInput() ?>
-
-
-    <?php
-//    echo $form->field($model, 'avatar')->widget(FileInput::classname(), [
-//    'options' => ['accept' => 'image/*'],
-//    ]);
-    ?>
-
 
     <div class="form-group">
-    <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
-<?php ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 
 </div>

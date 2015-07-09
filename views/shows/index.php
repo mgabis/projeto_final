@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\EventBalladSearch */
+/* @var $searchModel app\models\showssearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Event Ballads';
+$this->title = 'Shows';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="event-ballad-index">
+<div class="shows-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Event Ballad', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Shows', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,11 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
+            'id',
             'name',
             'local',
             'date',
-            //'address',
+            'address',
             // 'number',
             // 'neighborhood',
             // 'city',
