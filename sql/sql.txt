@@ -54,4 +54,23 @@ CREATE TABLE `person` (
   PRIMARY KEY (`id`,`phone_1`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+select * from person
+CREATE TABLE `shows` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `local` varchar(60) NOT NULL,
+  `date` date NOT NULL,
+  `address` varchar(60) NOT NULL,
+  `number` int(11) NOT NULL,
+  `neighborhood` varchar(45) NOT NULL,
+  `city` varchar(45) NOT NULL,
+  `state` varchar(45) NOT NULL,
+  `start_time` int(11) NOT NULL,
+  `final_hour` int(11) NOT NULL,
+  `number_of_tickets` int(11) NOT NULL,
+  `valor` varchar(45) NOT NULL,
+  `type_of_tickets` varchar(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
 
