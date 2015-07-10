@@ -44,8 +44,8 @@ class Shows extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 50],
             [['local', 'address'], 'string', 'max' => 60],
             [['neighborhood', 'city', 'state', 'valor'], 'string', 'max' => 45],
-            [['type_of_tickets'], 'string', 'max' => 15],
-            [['avatar'], 'longblob']
+            [['type_of_tickets'], 'string', 'max' => 15]
+            
 
         ];
     }
@@ -70,7 +70,7 @@ class Shows extends \yii\db\ActiveRecord
             'number_of_tickets' => 'Number Of Tickets',
             'valor' => 'Valor',
             'type_of_tickets' => 'Type Of Tickets',
-            'avatar' => 'Imagem'
+           
         ];
     }
 }

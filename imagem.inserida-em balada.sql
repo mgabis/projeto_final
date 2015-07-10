@@ -32,7 +32,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `person` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,event_ballad
   `name` varchar(60) NOT NULL,
   `cpf` int(11) NOT NULL,
   `rg` int(11) NOT NULL,
