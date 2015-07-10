@@ -22,8 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
            <?php foreach($shows as $show){ ?>
         
         <div class="col-md-4">
-            <img src="" class="img-rounded">
-            <h2><a href="" ><?php echo $show->avatar; ?></a></h2>
+            <img src="<?php echo $show->avatar; ?>" class="img-rounded">
             <h2><?php echo $show->name; ?></h2>
             <h2><?php echo $show->neighborhood; ?></h2>
             <p><?php echo $show->local; ?></p>

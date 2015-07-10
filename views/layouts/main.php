@@ -60,7 +60,7 @@ AppAsset::register($this);
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="icon-bar"><a href="<?= Url::to(['shows/index']); ?>">Shows</a></li>
+                            <li class="icon-bar"><a href="<?= Url::to(['shows/show']); ?>">Shows</a></li>
                             <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
                             <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
 

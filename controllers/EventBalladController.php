@@ -69,6 +69,7 @@ class EventBalladController extends Controller {
             echo '<pre>';
 var_dump($_FILES);
 exit;
+
             $upload = new Upload($_FILES["image" . $i]);
             $path = Yii::app()->request->baseUrl . "/protected/images/";
             try {
