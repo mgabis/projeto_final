@@ -1,7 +1,7 @@
-Criar o banco
 CREATE DATABASE `mytiket` /*!40100 DEFAULT CHARACTER SET latin1 */;
+ use mytiket;
 
-Criar tabela balada
+-- Criar tabela balada
 CREATE TABLE `event_ballad` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -24,7 +24,7 @@ ALTER TABLE `mytiket`.`event_ballad`
 CHANGE COLUMN `number_of_tickets` `number_of_tickets` INT(11) ZEROFILL NOT NULL ,
 ADD COLUMN `avatar` VARCHAR(45) NOT NULL AFTER `type_of_tickets`;
 
-Criar tabela contato
+-- Criar tabela contato
 
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -35,7 +35,7 @@ CREATE TABLE `contact` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-Criar tabela pessoa
+-- Criar tabela pessoa
 
 CREATE TABLE `person` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

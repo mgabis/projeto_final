@@ -37,6 +37,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'valor')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'type_of_tickets')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field ($model, 'avatar')->fileInput([])?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

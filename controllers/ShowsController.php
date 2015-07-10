@@ -40,6 +40,13 @@ class ShowsController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    
+     public function actionShow() {
+        $shows = Shows::find()->all();
+        return $this->render('show', [
+                    'shows' => $shows
+        ]);
+    }
 
     /**
      * Displays a single shows model.
