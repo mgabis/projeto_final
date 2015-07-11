@@ -8,6 +8,8 @@ use app\models\EventBalladSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
  * EventBalladController implements the CRUD actions for EventBallad model.
@@ -64,13 +66,13 @@ class EventBalladController extends Controller {
      */
     public function actionCreate() {
         $model = new EventBallad();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             echo '<pre>';
-var_dump($_FILES);
-exit;
+            var_dump($_FILES);
+            exit;
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            $upload = new Upload($_FILES["image" . $i]);
+
+            $upload = new Upload($_FILES["image"]);
             $path = Yii::app()->request->baseUrl . "/protected/images/";
             try {
                 if ($upload->uploaded) {
@@ -79,7 +81,7 @@ exit;
                     echo(" file not uploaded ");
                 }
                 if ($upload->processed) {
-                    $destName[$i] = $upload->file_dst_name;
+                    $destName['outra coisa'] = $upload->file_dst_name;
                 } else {
                     echo("upload not processed");
                     die;

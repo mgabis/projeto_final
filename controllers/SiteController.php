@@ -73,7 +73,7 @@ class SiteController extends Controller {
         return $this->goHome();
     }
 
-    public function actionContact() {
+    public function actionContactForm() {
 
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {

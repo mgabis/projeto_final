@@ -11,7 +11,7 @@ use Yii;
  * @property string $name
  * @property integer $cpf
  * @property integer $rg
- * @property string $e-mail
+ * @property string $email
  * @property integer $phone_1
  * @property integer $phone_2
  * @property string $address
@@ -21,26 +21,24 @@ use Yii;
  * @property string $state
  * @property string $password
  */
-class Person extends \yii\db\ActiveRecord
-{
+class Person extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'person';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['name', 'cpf', 'rg', 'e-mail', 'phone_1', 'phone_2', 'address', 'number', 'neighborhood', 'city', 'state', 'password'], 'required'],
+            [['name', 'cpf', 'rg', 'email', 'phone_1', 'phone_2', 'address', 'number', 'neighborhood', 'city', 'state', 'password'], 'required'],
             [['cpf', 'rg', 'phone_1', 'phone_2', 'number'], 'integer'],
             [['name', 'address'], 'string', 'max' => 60],
-            [['e-mail'], 'string', 'max' => 50],
+            [['email'], 'string', 'max' => 50],
             [['neighborhood', 'city', 'state'], 'string', 'max' => 45],
             [['password'], 'string', 'max' => 12]
         ];
@@ -49,14 +47,13 @@ class Person extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => 'ID',
             'name' => 'Name',
             'cpf' => 'Cpf',
             'rg' => 'Rg',
-            'e-mail' => 'E Mail',
+            'email' => 'Email',
             'phone_1' => 'Phone 1',
             'phone_2' => 'Phone 2',
             'address' => 'Address',
@@ -67,4 +64,16 @@ class Person extends \yii\db\ActiveRecord
             'password' => 'Password',
         ];
     }
+
+    public function beforeSave($insert) {
+        if (parent::beforeSave($insert)) {
+            $insert->password = sha1($insert->password);
+            // Place your custom code here
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

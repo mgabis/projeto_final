@@ -62,7 +62,7 @@ AppAsset::register($this);
                         <ul class="nav navbar-nav">
                             <li class="icon-bar"><a href="<?= Url::to(['shows/show']); ?>">Shows</a></li>
                             <li class="icon-bar"><a href="<?= Url::to(['event-ballad/listar']); ?>">Balada</a></li>
-                            <li class="icon-bar"><a href="<?= Url::to(['site/contact']); ?>">Contato</a></li>
+                            <li class="icon-bar"><a href="<?= Url::to(['site/contact-form']); ?>">Contato</a></li>
 
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
