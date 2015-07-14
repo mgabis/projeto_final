@@ -64,13 +64,22 @@ class ShowsController extends Controller {
      */
     public function actionCreate() {
         $model = new shows();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                        'model' => $model,
-            ]);
+        if (!empty(Yii::$app->request->post())) {
+            $postModel = Yii::$app->request->post();
+            if (!empty($_FILES['Shows']['name']['avatar'])) {
+                $file_extension = explode('.', $_FILES['Shows']['name']['avatar']);
+                $file_extension = array_pop($file_extension);
+                $new_filename = md5(time()) . '.' . $file_extension;
+                move_uploaded_file($_FILES['Shows']['tmp_name']['avatar'], Yii::$app->basePath . "/web/uploads/images/" . $new_filename);
+                $postModel['Shows']['avatar'] = $new_filename;
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('create', [
+                                'model' => $model,
+                    ]);
+                }
+            }
         }
     }
 

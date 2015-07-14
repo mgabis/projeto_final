@@ -31,31 +31,27 @@ $this->title = 'My Ticket';
     </div>
 
     <div class="body-content">
+ <div class="evento">
+   <?php foreach ($baladas as $balada) { ?>
 
-        <?php /*foreach($baladas as $balada){ ?>
-        
-        <div class="col-md-4">
-            <img src="" class="img-rounded">
-            <a href="" >Site oficial</a>
-            <h2><?php echo $balada->name; ?></h2>
-            <h2><?php echo $balada->neighborhood; ?></h2>
-            <p><?php echo $balada->local; ?></p>
-        </div>
-        
+            <div class="col-md-4">
+                <p><img  class="img-rounded"style="width: 400px; height: 400px" src="<?= Url::to(['uploads/images/'.$balada->avatar]); ?>"></p>
+                <h2><?php echo $balada->name; ?></h2>
+                <h2><?php echo $balada->local; ?></h2>
+                
+            </div>
+
         <?php } ?>
-            
-            <?php foreach($show as $shows){ ?>
-        
-        <div class="col-md-4">
-            <img src="" class="img-rounded">
-            <a href="" >Site oficial</a>
-            <h2><?php echo $shows->name; ?></h2>
-            <h2><?php echo $shows->neighborhood; ?></h2>
-            <p><?php echo $shows->local; ?></p>
-        </div>
-        
-        <?php } */?>
+         <?php foreach ($shows as $show) { ?>
 
+            <div class="col-md-4">
+                <p><img  class="img-rounded"style="width: 400px; height: 400px" src="<?= Url::to(['uploads/images/'.$show->avatar]); ?>"></p>
+                <h2><?php echo $show->name; ?></h2>
+                <p><?php echo $show->local; ?></p>
+                
+            </div>
+
+        <?php } ?>
     </div>
-
+</div>
 </div>

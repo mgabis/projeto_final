@@ -6,7 +6,7 @@ use yii\helpers\BaseUrl as Url;
 /* @var $this yii\web\View */
 /* @var $model app\models\EventBallad */
 
-$this->title = 'Create Event Ballad';
+$this->title = 'Balada';
 $this->params['breadcrumbs'][] = ['label' => 'Event Ballads', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 //echo '<pre>';
@@ -16,20 +16,20 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-balada">
     <h1><?= Html::encode($this->title) ?></h1>
     <div class="row">
+        <div class="evento">
 
         <?php foreach ($baladas as $balada) { ?>
 
             <div class="col-md-4">
-                <img src="" class="img-rounded">
-                <a href="" >Site oficial</a>
+                <p><img  class="img-rounded"style="width: 500px; height: 500px" src="<?= Url::to(['uploads/images/'.$balada->avatar]); ?>"></p>
                 <h2><?php echo $balada->name; ?></h2>
-                <h2><?php echo $balada->neighborhood; ?></h2>
-                <p><?php echo $balada->local; ?></p>
+                <h2><?php echo $balada->local; ?></h2>
+                
             </div>
 
         <?php } ?>
 
 
     </div>
-
+</div>
 </div>

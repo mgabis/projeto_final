@@ -53,7 +53,7 @@ class SiteController extends Controller {
     }
 
     public function actionLogin() {
-        if (!\Yii::$app->user->isGuest) {
+        if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
@@ -66,20 +66,26 @@ class SiteController extends Controller {
             ]);
         }
     }
+    
 
     public function actionLogout() {
         Yii::$app->user->logout();
+        $model = new LoginForm();
+        $this->layout = 'index';
+        return $this->render('login', ['model' => $model]);
+        }
+        
+        
 
-        return $this->goHome();
-    }
 
-    public function actionContactForm() {
+
+        public function actionContactForm() {
 
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+        Yii::$app->session->setFlash('contactFormSubmitted');
 
-            return $this->refresh();
+        return $this->refresh();
         } else {
             return $this->render('contact', [
                         'model' => $model,
@@ -88,41 +94,30 @@ class SiteController extends Controller {
     }
 
     public function actionBuscar($termo = null) {
-        if ($termo) {            
+        if ($termo) {
             $baladas = EventBallad::find()->andFilterWhere(['like', 'name', $termo])->all();
-            $shows = Shows::find()->andFilterWhere(['like', 'name', $termo])->all();            
+            $shows = Shows::find()->andFilterWhere(['like', 'name', $termo])->all();
         } else {
             $baladas = EventBallad::find()->all();
             $shows = Shows::find()->all();
         }
         $eventos = array_merge($baladas, $shows);
         return $this->render('buscar', [
-            'eventos' => $eventos
+                    'eventos' => $eventos
         ]);
     }
 
-    public function actionAbout() {
-        return $this->render('about');
+    public function actionListar() {
+        $baladas = EventBallad::find()->all();
+        return $this->render('listar', [
+                    'baladas' => $baladas
+        ]);
     }
-
-    public function actionCinema() {
-        return $this->render('Cinema');
-    }
-
-    public function actionBalada() {
-        return $this->render('Balada');
-    }
-
-    public function actionTeatro() {
-        return $this->render('Teatro');
-    }
-
-    public function actionShow() {
-        return $this->render('Show');
-    }
-
-    public function actionSonata() {
-        return $this->render('Sonata');
+  public function actionShow() {
+        $shows = Shows::find()->all();
+        return $this->render('show', [
+                    'shows' => $shows
+        ]);
     }
 
 }

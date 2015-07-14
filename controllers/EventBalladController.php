@@ -66,31 +66,20 @@ class EventBalladController extends Controller {
      */
     public function actionCreate() {
         $model = new EventBallad();
-            echo '<pre>';
-            var_dump($_FILES);
-            exit;
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-
-            $upload = new Upload($_FILES["image"]);
-            $path = Yii::app()->request->baseUrl . "/protected/images/";
-            try {
-                if ($upload->uploaded) {
-                    $upload->process($path);
-                } else {
-                    echo(" file not uploaded ");
-                }
-                if ($upload->processed) {
-                    $destName['outra coisa'] = $upload->file_dst_name;
-                } else {
-                    echo("upload not processed");
-                    die;
-                }
-            } catch (Exception $excp) {
-                echo($excp);
+        if (!empty(Yii::$app->request->post())) {
+            $postModel = Yii::$app->request->post();
+            if (!empty($_FILES['EventBallad']['name']['avatar'])) {
+                $file_extension = explode('.', $_FILES['EventBallad']['name']['avatar']);
+                $file_extension = array_pop($file_extension);
+                $new_filename = md5(time()) . '.' . $file_extension;
+                move_uploaded_file($_FILES['EventBallad']['tmp_name']['avatar'], Yii::$app->basePath . "/web/uploads/images/" . $new_filename);
+                $postModel['EventBallad']['avatar'] = $new_filename;
             }
 
-
+            $model->load($postModel);
+            $model->save();
+            
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -109,23 +98,6 @@ class EventBalladController extends Controller {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $upload = new Upload($_FILES["image" . $i]);
-            $path = Yii::app()->request->baseUrl . "/protected/images/";
-            try {
-                if ($upload->uploaded) {
-                    $upload->process($path);
-                } else {
-                    echo(" file not uploaded ");
-                }
-                if ($upload->processed) {
-                    $destName[$i] = $upload->file_dst_name;
-                } else {
-                    echo("upload not processed");
-                    die;
-                }
-            } catch (Exception $excp) {
-                echo($excp);
-            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [

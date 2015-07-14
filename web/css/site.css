@@ -172,3 +172,15 @@ a.desc:after {
     width: 50px
 }
 
+.icon-bar:hover{
+    background: #cccccc
+}
+
+.evento{
+    padding-top: 200px;
+}
+
+.img-rounded:hover{
+    height: 600px;
+    width: 600px
+}
