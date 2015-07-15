@@ -80,14 +80,14 @@ AppAsset::register($this);
 //            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 //        ])
             ?>
-            <?= $content ?>
+           <?=$content ?>
         </div>
     </div>
 
         <footer class="footer">
         <div class="container">
             <p class="pull-left">&copy; My Ticket <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
+            <p class="pull-right">Powered by: Gabi e Deivide</p>
         </div>
     </footer>
 
