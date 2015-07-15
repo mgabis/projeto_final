@@ -74,12 +74,12 @@ class ShowsController extends Controller {
                 $postModel['Shows']['avatar'] = $new_filename;
                 if ($model->load(Yii::$app->request->post()) && $model->save()) {
                     return $this->redirect(['view', 'id' => $model->id]);
-                } else {
-                    return $this->render('create', [
-                                'model' => $model,
-                    ]);
                 }
             }
+        } else {
+            return $this->render('create', [
+                        'model' => $model,
+            ]);
         }
     }
 
