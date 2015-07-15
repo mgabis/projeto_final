@@ -11,6 +11,7 @@ use app\models\ContactForm;
 use app\models\Contact;
 use app\models\EventBallad;
 use app\models\Shows;
+use yii\helpers\BaseUrl as Url;
 
 class SiteController extends Controller {
 
@@ -49,7 +50,13 @@ class SiteController extends Controller {
     }
 
     public function actionIndex() {
-        return $this->render('index');
+        $baladas = EventBallad::find()->all();
+        $shows = Shows::find()->all();
+        return $this->render('index',[
+            'baladas'=>$baladas,
+            'shows'=>$shows,
+        ]);
+         
     }
 
     public function actionLogin() {
@@ -107,17 +114,5 @@ class SiteController extends Controller {
         ]);
     }
 
-    public function actionListar() {
-        $baladas = EventBallad::find()->all();
-        return $this->render('listar', [
-                    'baladas' => $baladas
-        ]);
-    }
-  public function actionShow() {
-        $shows = Shows::find()->all();
-        return $this->render('show', [
-                    'shows' => $shows
-        ]);
-    }
-
-}
+ 
+  }

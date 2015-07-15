@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php foreach ($shows as $show) { ?>
 
             <div class="col-md-4">
-                <p><img  class="img-rounded"style="width: 400px; height: 400px" src="<?= Url::to(['uploads/images/'.$show->avatar]); ?>"></p>
+                <p><img  class="img-rounded"style="width: 200px; height: 200px" src="<?= Url::to(['uploads/images/'.$show->avatar]); ?>"></p>
                 <h2><?php echo $show->name; ?></h2>
                 <p><?php echo $show->local; ?></p>
                 

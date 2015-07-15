@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php foreach ($baladas as $balada) { ?>
 
             <div class="col-md-4">
-                <p><img  class="img-rounded"style="width: 400px; height: 400px" src="<?= Url::to(['uploads/images/'.$balada->avatar]); ?>"></p>
+                <p><img  class="img-rounded"style="width: 200px; height: 200px" src="<?= Url::to(['uploads/images/'.$balada->avatar]); ?>"></p>
                 <h2><?php echo $balada->name; ?></h2>
                 <h2><?php echo $balada->local; ?></h2>
                 
